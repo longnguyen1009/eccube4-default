@@ -28,6 +28,7 @@ docker-compose exec ec-cube composer install
 ### インストールスクリプトを実行する
 
 * FIX 60s error limit
+
 vendor/symfony/process/Process.phpに「60」を600にしてください。
 
 ```shell
