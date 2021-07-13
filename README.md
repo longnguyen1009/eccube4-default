@@ -9,24 +9,32 @@
 以下のコマンドでインストールしてください。
 
 ```shell
-git config --global core.autocrlf input # git configがglobalで core.autocrlf=input になっていることを確認する
-cd xxx　# 任意のディレクトリにcloneする
+# git configがglobalで core.autocrlf=input になっていることを確認する
+git config --global core.autocrlf input 
+
+# 任意のディレクトリにcloneする
+cd xxx　
+
 git clone https://github.com/longnguyen1009/eccube4-default.git
 
-docker-compose up -d --build　# Dockerコンテナを起動
+# Dockerコンテナを起動
+docker-compose up -d --build　
 
-docker-compose exec ec-cube composer install #composer install　=> vendor
+#composer install　=> vendor
+docker-compose exec ec-cube composer install 
 
 ```
 
 ### インストールスクリプトを実行する
 
 FIX 60s error limit
+
 vendor/symfony/process/Process.phpに「60」を600にしてください。
 
 ```shell
 
-docker-compose exec ec-cube bin/console eccube:install　#ec-cube はcompoerのサビースの名前
+docker-compose exec ec-cube bin/console eccube:install　
+#ec-cube はcompoerのサビースの名前
 
 ```
 
@@ -34,11 +42,9 @@ docker-compose exec ec-cube bin/console eccube:install　#ec-cube はcompoerの�
 
 ## 結果
 
-### [EC-CUBE 4.0 開発ドキュメント@doc4.ec-cube.net](https://doc4.ec-cube.net/)
-
-* フロント側 [http://localhost:8085/](http://localhost:8080/)
-* 管理画面 [http://localhost:8085/admin](http://localhost:8080/admin)
-* データベース [http://localhost:9085/](http://localhost:9085/)
+* フロント側 　[http://localhost:8085/](http://localhost:8085/)
+* 管理画面 　[http://localhost:8085/admin](http://localhost:8085/admin)
+* データベース 　[http://localhost:9085/](http://localhost:9085/)
 
 ```shell
 
